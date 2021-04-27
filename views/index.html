@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign.it</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Assign.it</a>
+    </nav>
+
+    <div class="container">
+
+        <form class="user-form" action="/api/exercise/new-user" method="POST">
+            <div class="form-group">
+
+                <input type="text" class="form-control" id="uname" name="username" placeholder="Username" required>
+            </div>
+            <input type="submit" class="btn btn-md btn-outline-dark" value="Add">
+        </form>
+
+        <form action="/api/exercise/add" method="POST">
+            <div class="form-group ">
+                <input id="uid" class="form-control" type="text" name="userId" placeholder="Employee Id*" required>
+            </div>
+            <div class="form-group">
+                <input id="desc" class="form-control" type="text" name="description" placeholder="Description*"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <input id="dur" class="form-control" type="text" name="duration" placeholder="Duration* (mins.)"
+                    required>
+            </div>
+            <div class="form-group">
+                <input id="dat" class="form-control" type="text" name="date" placeholder="date (yyyy-mm-dd)" required>
+            </div>
+
+            <input type="submit" class="btn btn-md btn-outline-dark" value="Assign">
+        </form>
+
+        <div class="email">
+
+            <h3>get notification with email</h3>
+            <form action="/mail" method="POST">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email" name="email" required>
+                    <input type="submit" class="btn btn-md btn-outline-dark" value="Send Mail">
+                </div>
+            </form>
+        </div>
+        <div class="buttons">
+            <a class="btn btn-outline-dark" href="http://localhost:3000/api/exercise/users" role="button">click to see
+                all
+                employees</a>
+            <form action="/api/exercise/log" method="GET">
+
+                <input type="text" class="form-control" name="user" placeholder="enter employee id" required>
+                <input type="submit" class="btn btn-md btn-outline-dark" value="get that employee">
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

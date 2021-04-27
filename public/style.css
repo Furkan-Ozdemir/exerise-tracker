@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+body{
+font-family: 'Montserrat', sans-serif;
+}
+form{
+  max-width: 500px;
+}
+.user-form{
+  margin: 2em 0; 
+}
+.form-group{
+  margin-top: 10px;
+}
+.navbar-brand{
+  margin-left: 50px;
+}
+form input[type=submit]{
+  margin-top: 1em;
+}
+.email{
+  margin-top: 1.5em;
+}
+.buttons{
+  margin:1.5em 0;
+}
